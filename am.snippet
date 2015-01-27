@@ -1,0 +1,28 @@
+'use strict';
+
+/**
+ * @ngdoc overview
+ * @name
+ * @description
+ * #
+ *
+ * Main module of the application.
+ */
+angular
+  .module('${1}', [
+    'ngCookies',
+    'ngResource',
+    'ui.router',
+    'ngMessages',
+    'config'
+  ])
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+    ${2}$urlRouterProvider.otherwise('/');
+
+    // use html5 urls
+    $locationProvider.html5Mode(true);
+
+    // add auth interceptor
+    $httpProvider.interceptors.push('authInterceptor');
+
+  });
