@@ -1,0 +1,11 @@
+/**
+ * @ngdoc service
+ * @name 
+ * @description
+ */
+angular.module('${1}App')
+  .factory('${2}', function ($resource, ENV) {
+    'use strict';
+
+    return $resource(ENV.apiUrl + 'api/${3}');
+  });
